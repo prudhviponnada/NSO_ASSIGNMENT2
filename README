@@ -14,8 +14,8 @@
 1. Add the IP addresses or hostnames of your web servers and HAProxy server to the `hosts` file.
 2. Use the following command to launch the Ansible playbook: 
                
-                ansible-playbook -i hosts site.yaml
- 
+``` ansible-playbook -i hosts site.yaml
+``` 
 
 ## Description:
 ### Tasks
@@ -28,7 +28,7 @@ updates every managed host's package list.
 - Sets up load balancing with HAproxy on a dedicated server.
 - Distributes the application2.py Flask code to web servers.
 
-## Notes:
+## Notes:0
 - Make sure the SSH keys are set up correctly so that the target hosts may be accessed.
 - Adjust the haproxy.cfg.j2 HAProxy configuration template to your specifications.
 - Make sure the Flask application can be accessed via the HAProxy load balancer by extensively testing the deployment.
