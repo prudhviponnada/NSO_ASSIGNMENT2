@@ -8,7 +8,7 @@
       apt:
         update_cache: true
 
-- name: Configuring HAproxy loadbalancer
+- name: Setting up HAProxy Load Balancer
   hosts: HAproxy
   become: yes
   tasks:
@@ -22,7 +22,7 @@
 
     - name: gather server ip addresses
       setup:
-            filter: ansible_default_ipv4.address     
+        filter: ansible_default_ipv4.address     
          
     
     - name: copy files haproxy.cfg
@@ -58,7 +58,7 @@
         name: gunicorn
         state: latest
 
-    - name: createnew directory
+    - name: create new directory
       file:
               path: "/home/flask-app/"
               state: directory
@@ -71,4 +71,5 @@
     - name: start flask app
       shell: |
         cd /home/flask-app/
-        gunicorn --bind 0.0.0.0:80 app:app&  
+        gunicorn --bind 0.0.0.0:80 app:app&
+        
