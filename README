@@ -29,7 +29,7 @@ updates every managed host's package list.
 - Distributes the application2.py Flask code to web servers.
 
 ## Notes:
-- Make sure the SSH keys are set up correctly so that the target hosts may be accessed without a password.
+- Make sure the SSH keys are set up correctly so that the target hosts may be accessed.
 - Adjust the haproxy.cfg.j2 HAProxy configuration template to your specifications.
 - Make sure the Flask application can be accessed via the HAProxy load balancer by extensively testing the deployment.
 
