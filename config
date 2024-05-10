@@ -1,0 +1,31 @@
+
+	Host bastionNSO
+		HostName 91.123.203.128
+		ForwardAgent yes
+		ControlMaster auto 
+		ControlPath ~/.ssh/ansible-%r@%h:%p
+		ControlPersist yes
+		
+	Host HAproxy
+		HostName 91.123.203.199
+		ForwardAgent yes
+		ControlMaster auto 
+		ProxyCommand ssh -W %h:%p bastionNSO
+	
+	Host devA
+		HostName 10.0.1.27
+		ProxyCommand ssh -W %h:%p bastionNSO
+	
+	Host devB
+		HostName 10.0.1.10
+		ProxyCommand ssh -W %h:%p bastionNSO
+	
+	Host devC
+		HostName 10.0.1.18
+		ProxyCommand ssh -W %h:%p bastionNSO
+	
+	Host *
+		user ubuntu
+		IdentityFile ~/.ssh/id_rsa
+		StrictHostKeyChecking no
+		PasswordAuthentication no
