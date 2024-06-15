@@ -1,7 +1,7 @@
 #In this assignment, we are upto implement a simple app in python-flask (referred to as flask app from now on) and put it behind HAproxy- which will work as a load balancer. 
 
 
-## Prerequisites:
+#Prerequisites:
 - Need to create servers and operating network for the requirement in the cleura
 - Ansible should be installed in our local host
 - Configure the SSH keys for allowance of servers
@@ -10,15 +10,15 @@
 
 
 
-## Usage:
+#Usage:
 1. Add the IP addresses or hostnames of your web servers and HAProxy server to the `hosts` file.
 2. Use the following command to launch the Ansible playbook: 
                
 ``` ansible-playbook -i hosts site.yaml
 ``` 
 
-## Description:
-### Tasks
+#Description:
+#Tasks
 updates every managed host's package list.
 - Installs the Pip, Flask, and Gunicorn requirements for Python on web servers so that applications can run.
 - On web servers, creates a directory for the Flask application.
